@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Рейтинг смен</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="page1">
+    <h1>Рейтинг смен</h1>
+    <div id="shifts">
+      <div class="shift" id="shift1">
+        <div class="shift-header">
+          Смена 1: <span class="score" id="score1">0</span>
+        </div>
+      </div>
+      <div class="shift" id="shift2">
+        <div class="shift-header">
+          Смена 2: <span class="score" id="score2">0</span>
+        </div>
+      </div>
+      <div class="shift" id="shift3">
+        <div class="shift-header">
+          Смена 3: <span class="score" id="score3">0</span>
+        </div>
+      </div>
+      <div class="shift" id="shift4">
+        <div class="shift-header">
+          Смена 4: <span class="score" id="score4">0</span>
+        </div>
+      </div>
+    </div>
+    <button onclick="requestPassword()">Изменить количество</button>
+  </div>
+
+  <div id="page2" style="display: none;">
+    <h1>Изменение количества смен</h1>
+    <div id="shift-controls">
+      <div class="shift-control">
+        Смена 1: 
+        <input type="number" id="input1" placeholder="Сумма">
+        <button onclick="updateScore(1, 'add')">Добавить</button>
+        <button onclick="updateScore(1, 'subtract')">Уменьшить</button>
+      </div>
+      <div class="shift-control">
+        Смена 2: 
+        <input type="number" id="input2" placeholder="Сумма">
+        <button onclick="updateScore(2, 'add')">Добавить</button>
+        <button onclick="updateScore(2, 'subtract')">Уменьшить</button>
+      </div>
+      <div class="shift-control">
+        Смена 3: 
+        <input type="number" id="input3" placeholder="Сумма">
+        <button onclick="updateScore(3, 'add')">Добавить</button>
+        <button onclick="updateScore(3, 'subtract')">Уменьшить</button>
+      </div>
+      <div class="shift-control">
+        Смена 4: 
+        <input type="number" id="input4" placeholder="Сумма">
+        <button onclick="updateScore(4, 'add')">Добавить</button>
+        <button onclick="updateScore(4, 'subtract')">Уменьшить</button>
+      </div>
+    </div>
+    <button onclick="goToPage(1)">Вернуться к списку</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
