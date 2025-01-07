@@ -51,16 +51,25 @@ document.addEventListener('DOMContentLoaded', () => {
       parseInt(score.textContent, 10)
     );
     localStorage.setItem('shiftScores', JSON.stringify(scores));
+    console.log('Данные сохранены в LocalStorage:', scores); // Проверка
   }
   
   // Загрузка данных из LocalStorage
   function loadScores() {
     const savedScores = JSON.parse(localStorage.getItem('shiftScores'));
+    console.log('Загруженные данные из LocalStorage:', savedScores); // Проверка
     if (savedScores) {
       savedScores.forEach((score, index) => {
         document.getElementById(`score${index + 1}`).textContent = score;
       });
+    } else {
+      // Если данных нет в LocalStorage, установить значения по умолчанию
+      const defaultScores = [0, 0, 0, 0];
+      defaultScores.forEach((score, index) => {
+        document.getElementById(`score${index + 1}`).textContent = score;
+      });
     }
+    updateOrder(); // Обновить порядок смен
   }
   
   // Обновление порядка смен в DOM
